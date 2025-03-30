@@ -28,6 +28,9 @@ public class Mentor implements Usuario {
     @OneToMany(mappedBy = "mentor", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Aptitud> loQueOfrece;
 
+    @OneToMany(mappedBy = "mentor")
+    private List<Mensajes> mensajes;
+
     @Override
     public String getPrincipalId() {
         return principalId;

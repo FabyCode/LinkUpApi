@@ -3,6 +3,8 @@ package com.linkup.api.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @Getter
 @AllArgsConstructor
@@ -22,6 +24,9 @@ public class Emprendedor implements Usuario{
     private String categoria;
     private String sitioWeb;
     private Integer edad;
+
+    @OneToMany(mappedBy = "emprendedor")
+    private List<Mensajes> mensajes;
 
     @Override
     public String getPrincipalId() {

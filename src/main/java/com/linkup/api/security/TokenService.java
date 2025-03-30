@@ -7,9 +7,6 @@ import com.auth0.jwt.interfaces.DecodedJWT;
 import com.linkup.api.model.Emprendedor;
 import com.linkup.api.model.Mentor;
 import com.linkup.api.model.Usuario;
-import com.linkup.api.repository.EmprendedorRepository;
-import com.linkup.api.repository.MentorRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
@@ -64,7 +61,7 @@ public class TokenService {
             Algorithm algorithm = Algorithm.HMAC256("secret");
             JWT.require(algorithm)
                     .withIssuer("LinkUp")
-                    .withSubject(usuario.getPrincipalId())  // se obtiene el principalId de cualquier usuario (Mentor o Emprendedor)
+                    .withSubject(usuario.getPrincipalId())
                     .build()
                     .verify(token);
             return true;

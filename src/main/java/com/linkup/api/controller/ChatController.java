@@ -2,6 +2,7 @@ package com.linkup.api.controller;
 
 import com.linkup.api.dto.ChatRequest;
 import com.linkup.api.dto.EmprendedorDTO;
+import com.linkup.api.dto.MensajeRequest;
 import com.linkup.api.model.Mensajes;
 import com.linkup.api.service.ChatService;
 import jakarta.validation.constraints.NotNull;
@@ -31,12 +32,13 @@ public class ChatController {
     }
 
     @PostMapping("/enviarMensaje")
-    public ResponseEntity<Mensajes> enviarMensaje(
-            @RequestParam @NotNull Long emprendedorId,
-            @RequestParam @NotNull Long mentorId,
-            @RequestParam @NotNull String contenido) {
+    public ResponseEntity<Mensajes> enviarMensaje(@RequestBody MensajeRequest mensajeRequest) {
         try {
-            Mensajes mensaje = chatService.enviarMensaje(emprendedorId, mentorId, contenido);
+            Mensajes mensaje = chatService.enviarMensaje(
+                    mensajeRequest.getEmprendedorId(),
+                    mensajeRequest.getMentorId(),
+                    mensajeRequest.getContenido()
+            );
             return ResponseEntity.ok(mensaje);
         } catch (IllegalArgumentException e) {
             return ResponseEntity.badRequest().body(null);
@@ -44,12 +46,13 @@ public class ChatController {
     }
 
     @PostMapping("/enviarMensajeComoMentor")
-    public ResponseEntity<Mensajes> enviarMensajeComoMentor(
-            @RequestParam @NotNull Long emprendedorId,
-            @RequestParam @NotNull Long mentorId,
-            @RequestParam @NotNull String contenido) {
+    public ResponseEntity<Mensajes> enviarMensajeComoMentor(@RequestBody MensajeRequest mensajeRequest) {
         try {
-            Mensajes mensaje = chatService.enviarMensajeComoMentor(emprendedorId, mentorId, contenido);
+            Mensajes mensaje = chatService.enviarMensajeComoMentor(
+                    mensajeRequest.getEmprendedorId(),
+                    mensajeRequest.getMentorId(),
+                    mensajeRequest.getContenido()
+            );
             return ResponseEntity.ok(mensaje);
         } catch (IllegalArgumentException e) {
             return ResponseEntity.badRequest().body(null);

@@ -31,7 +31,7 @@ public class SecurityConfiguration {
                                 .requestMatchers(HttpMethod.POST, "/api/auth/registrar/mentor").permitAll()
 
                                 .requestMatchers("/swagger-ui.html", "/v3/api-docs/**", "/swagger-ui/**").permitAll()
-                                .anyRequest().authenticated()
+                                .anyRequest().permitAll()
                 )
                 .addFilterBefore(new InternetIdentityFilter(mentorRepository, emprendedorRepository), UsernamePasswordAuthenticationFilter.class);
 

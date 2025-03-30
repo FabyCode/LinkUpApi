@@ -33,6 +33,14 @@ public class Emprendedor implements Usuario{
         return principalId;
     }
 
+    public String getNombreCompleto() {
+        return nombreCompleto;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
     public void setEdad(Integer edad) {
         this.edad = edad;
     }

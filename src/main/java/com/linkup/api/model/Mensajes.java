@@ -1,14 +1,10 @@
 package com.linkup.api.model;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.time.LocalDateTime;
 
 @Entity
-@Getter
-@Setter
 @Table(name = "mensajes")
 public class Mensajes {
     @Id
@@ -28,4 +24,44 @@ public class Mensajes {
 
     @Column(name = "fecha_envio", nullable = false)
     private LocalDateTime fechaEnvio;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public LocalDateTime getFechaEnvio() {
+        return fechaEnvio;
+    }
+
+    public void setFechaEnvio(LocalDateTime fechaEnvio) {
+        this.fechaEnvio = fechaEnvio;
+    }
+
+    public Mentor getMentor() {
+        return mentor;
+    }
+
+    public void setMentor(Mentor mentor) {
+        this.mentor = mentor;
+    }
+
+    public Emprendedor getEmprendedor() {
+        return emprendedor;
+    }
+
+    public void setEmprendedor(Emprendedor emprendedor) {
+        this.emprendedor = emprendedor;
+    }
+
+    public String getContenido() {
+        return contenido;
+    }
+
+    public void setContenido(String contenido) {
+        this.contenido = contenido;
+    }
 }

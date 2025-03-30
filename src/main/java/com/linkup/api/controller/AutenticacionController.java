@@ -36,10 +36,11 @@ public class AutenticacionController {
         String tiempoRespuesta = crearCuentaRequest.tiempoRespuesta();
         String sitioWeb = crearCuentaRequest.sitioWeb();
         String sobreMi = crearCuentaRequest.sobreMi();
+        String imagenPerfilUrl = crearCuentaRequest.imagenPerfilUrl();
         Integer edad = crearCuentaRequest.edad();
 
         Mentor mentor = autenticacionService.crearCuentaMentor(principalId, nombre, areaEspecializacion,
-                tiempoRespuesta, sitioWeb, sobreMi, edad);
+                tiempoRespuesta, sitioWeb, sobreMi, imagenPerfilUrl, edad);
 
         return ResponseEntity.ok(mentor);
     }

@@ -6,7 +6,6 @@ import lombok.*;
 import java.util.List;
 
 @Entity
-@Getter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Mentor implements Usuario {
@@ -35,6 +34,10 @@ public class Mentor implements Usuario {
     @Override
     public String getPrincipalId() {
         return principalId;
+    }
+
+    public void setPrincipalId(String principalId) {
+        this.principalId = principalId;
     }
 
     public Long getId() {
@@ -91,10 +94,6 @@ public class Mentor implements Usuario {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    public void setPrincipalId(String principalId) {
-        this.principalId = principalId;
     }
 
     public String getImagenPerfilUrl() {

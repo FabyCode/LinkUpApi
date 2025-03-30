@@ -27,7 +27,7 @@ public class AutenticacionService {
     }
 
     public Mentor crearCuentaMentor(String principalId, String nombre, String areaEspecializacion,
-                                    String tiempoRespuesta, String sitioWeb, String sobreMi, Integer edad) {
+                                    String tiempoRespuesta, String sitioWeb, String sobreMi, String imagenPerfilUrl, Integer edad) {
         Mentor mentor = new Mentor();
         mentor.setPrincipalId(principalId);
         mentor.setNombre(nombre);
@@ -35,6 +35,7 @@ public class AutenticacionService {
         mentor.setTiempoRespuesta(tiempoRespuesta);
         mentor.setSitioWeb(sitioWeb);
         mentor.setSobreMi(sobreMi);
+        mentor.setImagenPerfilUrl(imagenPerfilUrl);
         mentor.setEdad(edad);
 
         return mentorRepository.save(mentor);

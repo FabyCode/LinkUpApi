@@ -33,36 +33,64 @@ public class Emprendedor implements Usuario{
         return principalId;
     }
 
-    public String getNombreCompleto() {
-        return nombreCompleto;
-    }
-
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Integer getEdad() {
+        return edad;
     }
 
     public void setEdad(Integer edad) {
         this.edad = edad;
     }
 
+    public String getSitioWeb() {
+        return sitioWeb;
+    }
+
     public void setSitioWeb(String sitioWeb) {
         this.sitioWeb = sitioWeb;
+    }
+
+    public String getCategoria() {
+        return categoria;
     }
 
     public void setCategoria(String categoria) {
         this.categoria = categoria;
     }
 
+    public String getUbicacion() {
+        return ubicacion;
+    }
+
     public void setUbicacion(String ubicacion) {
         this.ubicacion = ubicacion;
+    }
+
+    public String getSobreMi() {
+        return sobreMi;
     }
 
     public void setSobreMi(String sobreMi) {
         this.sobreMi = sobreMi;
     }
 
+    public String getCorreo() {
+        return correo;
+    }
+
     public void setCorreo(String correo) {
         this.correo = correo;
+    }
+
+    public String getNombreCompleto() {
+        return nombreCompleto;
     }
 
     public void setNombreCompleto(String nombreCompleto) {

@@ -22,11 +22,12 @@ public class Mentor implements Usuario {
     private String tiempoRespuesta;
     private String sitioWeb;
     private String sobreMi;
+    private String imagenPerfilUrl;
     //private String cv = null;
     private Integer edad;
 
-    @OneToMany(mappedBy = "mentor", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Aptitud> loQueOfrece;
+    //@OneToMany(mappedBy = "mentor", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    //private List<Aptitud> loQueOfrece;
 
     @OneToMany(mappedBy = "mentor")
     private List<Mensajes> mensajes;
@@ -36,24 +37,56 @@ public class Mentor implements Usuario {
         return principalId;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Integer getEdad() {
+        return edad;
+    }
+
     public void setEdad(Integer edad) {
         this.edad = edad;
+    }
+
+    public String getSobreMi() {
+        return sobreMi;
     }
 
     public void setSobreMi(String sobreMi) {
         this.sobreMi = sobreMi;
     }
 
+    public String getSitioWeb() {
+        return sitioWeb;
+    }
+
     public void setSitioWeb(String sitioWeb) {
         this.sitioWeb = sitioWeb;
+    }
+
+    public String getTiempoRespuesta() {
+        return tiempoRespuesta;
     }
 
     public void setTiempoRespuesta(String tiempoRespuesta) {
         this.tiempoRespuesta = tiempoRespuesta;
     }
 
+    public String getAreaEspecializacion() {
+        return areaEspecializacion;
+    }
+
     public void setAreaEspecializacion(String areaEspecializacion) {
         this.areaEspecializacion = areaEspecializacion;
+    }
+
+    public String getNombre() {
+        return nombre;
     }
 
     public void setNombre(String nombre) {
@@ -62,5 +95,13 @@ public class Mentor implements Usuario {
 
     public void setPrincipalId(String principalId) {
         this.principalId = principalId;
+    }
+
+    public String getImagenPerfilUrl() {
+        return imagenPerfilUrl;
+    }
+
+    public void setImagenPerfilUrl(String imagenPerfilUrl) {
+        this.imagenPerfilUrl = imagenPerfilUrl;
     }
 }

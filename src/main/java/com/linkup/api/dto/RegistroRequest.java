@@ -11,5 +11,6 @@ public record RegistroRequest(
         String nombreCompleto,
         String correo,
         String ubicacion,
-        String categoria
+        String categoria,
+        String ImagenPerfilUrl
 ) { }
